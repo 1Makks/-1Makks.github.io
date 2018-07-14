@@ -1,0 +1,9 @@
+RewriteEngine On
+Options +FollowSymlinks -Indexes
+RewriteBase /
+RewriteRule ^.htaccess$ -[F]
+
+RewriteRule ^([a-zA-Z]{0,25}+).html([a-zA-Z0-9\&\=]{0,100}+)? index.php?page=$1$2 [L]
+RewriteRule ^page-([0-9]{0,10}+).html? index.php?page=page&id=$1 [L]
+RewriteRule ^news-([0-9]{0,10}+).html? index.php?page=news&id=$1 [L]
+
